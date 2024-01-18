@@ -831,6 +831,18 @@ menu = {
 	end,
 	get_version = function ()
 		return "2.62.1"
+	end,
+	get_feature_by_hierarchy_key = function(key)
+		return { --return a dummy feat
+			id = 0,
+			name = key,
+			type = "action",
+			parent = 0,
+			value = 0,
+			handler = function() end
+		}
+	end,
+	exit = function()
 	end
 }
 
@@ -1013,6 +1025,7 @@ scriptdraw = {
 player = {
 	player_id = players.user,
 	get_player_ped = players.user_ped,
+	player_ped = players.user_ped,
 	set_player_model = PLAYER.SET_PLAYER_MODEL,
 	get_player_group = PLAYER.GET_PLAYER_GROUP,
 	is_player_female = function (pid)
